@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "4e5be15a-0661-4f04-aa4c-51de7360f2da",
+		"name": "spring-boot-tennis-table",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "participant",
+			"item": [
+				{
+					"name": "add-participant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fristName\": \"mostafa\",\n    \"lastName\": \"samir\",\n    \"userName\": \"m_ali\",\n    \"email\": \"m_ali@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4444/tennis-table/participent/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4444",
+							"path": [
+								"tennis-table",
+								"participent",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list-all-participants",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/tennis-table/participent/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"tennis-table",
+								"participent",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "group-participant-into-n",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/tennis-table/participent/group?groupsCount=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"tennis-table",
+								"participent",
+								"group"
+							],
+							"query": [
+								{
+									"key": "groupsCount",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "round-match",
+			"item": [
+				{
+					"name": "list-generated-match",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/tennis-table/round-matches/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"tennis-table",
+								"round-matches",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-match-score",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"matchId\": 37,\n    \"firstScore\": 8,\n    \"secondScore\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/tennis-table/round-matches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"tennis-table",
+								"round-matches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-match",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstPlayerUsername\": \"amr_adel\",\n    \"secondPlayerUsername\": \"ahmed_yasser\",\n    \"launchTime\": \"2021-08-01T13:00:00.000+00:00\",\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/tennis-table/round-matches/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"tennis-table",
+								"round-matches",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "submit-champion",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"ahmed_yasser@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/tennis-table/participent/champion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"tennis-table",
+								"participent",
+								"champion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "close=round",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/tennis-table/round/close",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"tennis-table",
+								"round",
+								"close"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

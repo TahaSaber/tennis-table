@@ -1,0 +1,41 @@
+
+spring:
+  application:
+     name: tennis-table-service  # Service registers under this name
+  freemarker:
+    enabled: false           # Ignore Eureka dashboard FreeMarker templates
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 4GTSS-pass
+    url: jdbc:mysql://localhost:3306/tennis_table
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  mail:
+    host: smtp.gmail.com
+    password: tmail3864_Spring_code$boot
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          connectiontimeout: 5000
+          starttls:
+            enable: true
+          timeout: 5000
+          writetimeout: 5000
+    username: tmail3864
+    
+server:
+  port: 4444
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+
+management.endpoints.web.exposure.include: '*'

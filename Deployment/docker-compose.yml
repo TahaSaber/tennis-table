@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  app:
+    container_name: tennis_table_app
+    image: openjdk:8-jre
+    entrypoint: >
+      bash -c "/usr/bin/wait-for-it.sh db:3306 -t 0 -- 
+      java -cp /usr/app/app.jar com.company.spring.tennis.table.TennisTableApplication"
+    depends_on:
+      - db
+    environment: 
+      - spring_datasource_url=jdbc:mysql://db:3306/tennis_table
+      - spring_datasource_username=admin
+      - spring_datasource_password=admin
+    volumes:
+      - ../Implementation/Source/tennis-table-parent/tennis-table-ws/target/tennis-table-ws-0.0.1-SNAPSHOT.jar:/usr/app/app.jar
+      - ./wait-for-it.sh:/usr/bin/wait-for-it.sh
+      
+    ports:
+      - '4444:4444'
+
+  db:
+    container_name: tennis_table_db
+    image: mysql:8.0.20
+    ports:
+      - '13306:3306'
+    environment:
+      - MYSQL_DATABASE=tennis_table
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+      - MYSQL_ROOT_PASSWORD=admin
+    volumes:
+      - ../Design/Database_Scripts:/docker-entrypoint-initdb.d
