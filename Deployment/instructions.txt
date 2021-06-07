@@ -9,3 +9,6 @@ Tennis-table microservice deplyment instructions:
 3.5. close the round
 3.6. submit request for new match
 3.7. update champion and send congratulation email
+4 "docker-compose down -v" to close containers and remove volumes
+
+

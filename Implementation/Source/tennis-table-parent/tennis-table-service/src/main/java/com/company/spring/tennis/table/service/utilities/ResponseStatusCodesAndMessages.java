@@ -19,5 +19,9 @@ public class ResponseStatusCodesAndMessages {
 	public static final String SECOND_PLAYER_NOT_EXIST = "Sorry! The second player does not registered to our system";
 	public static final String EMAIL_NOT_EXIST = "Sorry! This email does not registered to our system";
 	public static final String CHAMPION_MAIL = "The Champion is informed successfully";
+	public static final String FAILED_MAIL = "Can't send mail right now";
+	public static final String NOT_FOUND = "Sorry! Invalid match ID";
+
+
 
 }

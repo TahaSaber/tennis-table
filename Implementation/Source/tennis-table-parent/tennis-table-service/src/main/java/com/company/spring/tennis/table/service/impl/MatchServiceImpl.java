@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
@@ -30,6 +31,8 @@ import com.company.spring.tennis.table.service.types.RequestTypes;
 import com.company.spring.tennis.table.service.types.RoundDto;
 import com.company.spring.tennis.table.service.types.RoundMatchDto;
 import com.company.spring.tennis.table.service.utilities.PropertiesConfiguration;
+import com.company.spring.tennis.table.service.utilities.RejectionReason;
+import com.company.spring.tennis.table.service.utilities.ResponseStatusCodesAndMessages;
 import com.company.spring.tennis.table.service.validation.exceptions.ValidationException;
 import com.company.spring.tennis.table.service.validation.impl.RequestValidatorCaller;
 
@@ -141,7 +144,16 @@ public class MatchServiceImpl implements MatchService {
 
 		RoundMatchDto matchDto = null;
 		try {
-			RoundMatch roundMatch = matchRepository.findById(matchUpdateDto.getMatchId()).get();
+
+			Optional<RoundMatch> optional = matchRepository.findById(matchUpdateDto.getMatchId());
+
+			if (!optional.isPresent()) {
+				RejectionReason reason = new RejectionReason();
+				reason.setCode(ResponseStatusCodesAndMessages.FAILED_CODE);
+				reason.setReason(ResponseStatusCodesAndMessages.NOT_FOUND);
+				throw new ServiceException(reason);
+			}
+			RoundMatch roundMatch = optional.get();
 			roundMatch.setFirstPlayerScore(matchUpdateDto.getFirstScore());
 			roundMatch.setSecondPlayerScore(matchUpdateDto.getSecondScore());
 			matchDto = modelMapper.map(matchRepository.save(roundMatch), RoundMatchDto.class);

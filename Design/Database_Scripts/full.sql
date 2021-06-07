@@ -96,7 +96,7 @@ CREATE TABLE `round` (
 
 LOCK TABLES `round` WRITE;
 /*!40000 ALTER TABLE `round` DISABLE KEYS */;
-INSERT INTO `round` VALUES (1,'First-Round',2),(2,'Second-Round',1),(3,'Third-Round',1);
+INSERT INTO `round` VALUES (1,'First-Round',1),(2,'Second-Round',1),(3,'Third-Round',1);
 /*!40000 ALTER TABLE `round` ENABLE KEYS */;
 UNLOCK TABLES;
 

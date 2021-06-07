@@ -6,16 +6,18 @@ spring:
     enabled: false           # Ignore Eureka dashboard FreeMarker templates
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: 4GTSS-pass
     url: jdbc:mysql://localhost:3306/tennis_table
-    username: root
+    username: admin
+    password: admin
   jpa:
     hibernate:
       ddl-auto: none
     show-sql: true
+
   mail:
     host: smtp.gmail.com
-    password: tmail3864_Spring_code$boot
+    username: username #Enter valid username and password
+    password: password
     port: 587
     properties:
       mail:
@@ -26,10 +28,13 @@ spring:
             enable: true
           timeout: 5000
           writetimeout: 5000
-    username: tmail3864
+    
+    
     
 server:
   port: 4444
+  servlet:
+      contextPath: /tennis-table
     
 eureka:
   client:

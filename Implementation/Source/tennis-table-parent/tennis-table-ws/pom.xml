@@ -8,12 +8,12 @@
 		<artifactId>tennis-table-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	
+
 	<artifactId>tennis-table-ws</artifactId>
 	<name>tennis-table-ws</name>
 	<version>${version.tennis.table.ws}</version>
 	<description>tennis-table-ws</description>
-	
+
 	<packaging>jar</packaging>
 
 	<properties>
@@ -30,6 +30,27 @@
 
 
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.company.spring.tennis.table.TennisTableWsApplication</mainClass>
+				</configuration>
+
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+
+			</plugin>
+		</plugins>
+	</build>
 
 
 </project>

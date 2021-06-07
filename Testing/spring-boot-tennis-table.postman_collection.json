@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"fristName\": \"mostafa\",\n    \"lastName\": \"samir\",\n    \"userName\": \"m_ali\",\n    \"email\": \"m_ali@gmail.com\"\n}",
+							"raw": "{\n    \"fristName\": \"ahmed\",\n    \"lastName\": \"amer\",\n    \"userName\": \"ali_opl\",\n    \"email\": \"ali@gmail.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -143,7 +143,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"matchId\": 37,\n    \"firstScore\": 8,\n    \"secondScore\": 4\n}",
+							"raw": "{\n    \"matchId\": 1,\n    \"firstScore\": 8,\n    \"secondScore\": 4\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -151,15 +151,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/tennis-table/round-matches",
+							"raw": "http://localhost:4444/tennis-table/round-matches/scores",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "4444",
 							"path": [
 								"tennis-table",
-								"round-matches"
+								"round-matches",
+								"scores"
 							]
 						}
 					},
@@ -172,7 +173,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstPlayerUsername\": \"amr_adel\",\n    \"secondPlayerUsername\": \"ahmed_yasser\",\n    \"launchTime\": \"2021-08-01T13:00:00.000+00:00\",\n}",
+							"raw": "{\n    \"firstPlayerUsername\": \"amr_adel\",\n    \"secondPlayerUsername\": \"ahmed_yasser\",\n    \"launchTime\": \"2021-08-02T13:00:00.000+00:00\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -180,12 +181,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/tennis-table/round-matches/add",
+							"raw": "http://localhost:4444/tennis-table/round-matches/add",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "4444",
 							"path": [
 								"tennis-table",
 								"round-matches",
@@ -216,12 +217,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/tennis-table/participent/champion",
+							"raw": "http://localhost:4444/tennis-table/participent/champion",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "4444",
 							"path": [
 								"tennis-table",
 								"participent",
@@ -246,12 +247,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/tennis-table/round/close",
+							"raw": "http://localhost:4444/tennis-table/round/close",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "4444",
 							"path": [
 								"tennis-table",
 								"round",

@@ -6,7 +6,7 @@ services:
     image: openjdk:8-jre
     entrypoint: >
       bash -c "/usr/bin/wait-for-it.sh db:3306 -t 0 -- 
-      java -cp /usr/app/app.jar com.company.spring.tennis.table.TennisTableApplication"
+      java -jar /usr/app/app.jar"
     depends_on:
       - db
     environment: 
@@ -19,6 +19,8 @@ services:
       
     ports:
       - '4444:4444'
+    extra_hosts:
+      - "smtp.gmail.com:74.125.140.108"
 
   db:
     container_name: tennis_table_db

@@ -2,6 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
 	<parent>
 		<groupId>com.company.spring.tennis.table</groupId>
 		<artifactId>tennis-table-parent</artifactId>
@@ -13,8 +14,6 @@
 	<version>${version.tennis.table.service}</version>
 	<packaging>jar</packaging>
 	
-	
-
 	<dependencies>
 		<dependency>
 			<groupId>com.company.spring.tennis.table</groupId>
